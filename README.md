@@ -7,7 +7,8 @@ onboard a Raspberry Pi to detect motion and the M5StickCPlus to control the ligh
 encoder that will enable color changes of the light bulb by turning the encoder and use the button click of the encoder to set the color output (on/off). Additionally,
 our project will feature a security mode, which can be activated by double-clicking the M5StickCPlus button, that will detect motion, turn on the lights, and send an 
 alert message to a designated phone or computer to notify the homeowner.
-# Images of Our Project:
-![our_project](https://github.com/elee2045sp23/semester-project-jud-william-danny/picture_of_design.png)
-# Link to Video:
+# Link to Video of Project:
 [insertlinkhere]
+# Images of Our Project:
+![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/single_light_bulb.jpg)
+
