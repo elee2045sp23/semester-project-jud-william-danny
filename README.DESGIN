@@ -1,3 +1,0 @@
-Home control system 
-Group mebers: William Lord, Judd Kenny, Danny Conner, and Cameron Blake 
-It will use a camera or rasberry for motion detection and control lights using the M5 stick as a controller. We plan to buy a dial for the M5 to cycle through colors and use the button to set that color output and turn lights on. Furthermore, if you double-click the M5 stick it will switch to the security mode which will detect motion and turn on a light and send a message to a phone or computer to alert the homeowner.
