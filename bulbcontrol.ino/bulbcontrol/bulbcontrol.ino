@@ -1,7 +1,9 @@
+#include "auth.h"
 #include <M5StickCPlus.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include "dannyswifi.h"
+#include "esp_wpa2.h" //wpa2 library for connections to Enterprise networks
 
 #define BUTTON_C_PIN 26
 #define ARRAY_SIZE(x) sizeof(x)/sizeof(x[0])
@@ -79,7 +81,25 @@ void reconnect() {
 
 
 void setup() {
-
+  WiFi.disconnect(true);  //disconnect form wifi to set new wifi connection
+  WiFi.mode(WIFI_STA); //init wifi mode
+  #ifdef USE_EAP
+    esp_wifi_sta_wpa2_ent_set_identity((uint8_t *)EAP_ANONYMOUS_IDENTITY, strlen(EAP_ANONYMOUS_IDENTITY));
+    esp_wifi_sta_wpa2_ent_set_username((uint8_t *)EAP_IDENTITY, strlen(EAP_IDENTITY));
+    esp_wifi_sta_wpa2_ent_set_password((uint8_t *)EAP_PASSWORD, strlen(EAP_PASSWORD));
+    esp_wifi_sta_wpa2_ent_enable();
+    WiFi.begin(ssid); //connect to wifi
+  #else
+    WiFi.begin(ssid,WPA_PASSWORD);
+  #endif
+  WiFi.setSleep(false);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Waiting for connection");
+  }
+  IPAddress ip = WiFi.localIP();
+  Serial.println(ip);
+  M5.Lcd.print(ip);
   M5.begin();
   M5.Lcd.setRotation(1);
 
