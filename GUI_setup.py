@@ -3,10 +3,14 @@ import paho.mqtt.client as mqtt
 import time
 
 broker = "info8000.ga"
-topic_status = ""
+topic_status_1 = ""
+topic_status_2 = ""
+topic_status_3 = ""
+
 topic_control_color_for_bulb_1 = ""
 topic_control_color_for_bulb_2 = ""
 topic_control_color_for_bulb_3 = ""
+
 topic_control_status_for_bulb_1 = ""
 topic_control_status_for_bulb_2 = ""
 topic_control_status_for_bulb_3 = ""
@@ -60,6 +64,57 @@ def setColor_2(red,green,blue):
     color_frame_2.config(bg=f"#{red:02x}{green:02x}{blue:02x}")
 def setColor_3(red,green,blue):
     color_frame_3.config(bg=f"#{red:02x}{green:02x}{blue:02x}")
+def pumpMQTT():
+    client.loop(0)
+    root.after(10,pumpMQTT)
+#Methods for MQTT for each bulb    
+def onMessageFromLight_1(client_obj, userdata, message:mqtt.MQTTMessage):
+    if message.topic == topic_status_1:
+        on = int(message.payload[0])
+        red = int(message.payload[1])
+        green = int(message.payload[2])
+        blue = int(message.payload[3])
+        setColor_1(red,green,blue)
+        if on:
+            bulb_on_off.set("ON") 
+        else:
+            bulb_on_off.set("OFF") 
+        bulb_time.set(time.ctime())
+def onMessageFromLight_2(client_obj, userdata, message:mqtt.MQTTMessage):
+    if message.topic == topic_status_2:
+        on = int(message.payload[0])
+        red = int(message.payload[1])
+        green = int(message.payload[2])
+        blue = int(message.payload[3])
+        setColor_2(red,green,blue)
+        if on:
+            bulb_on_off_2.set("ON") 
+        else:
+            bulb_on_off_2.set("OFF") 
+        bulb_time_2.set(time.ctime())
+def onMessageFromLight_3(client_obj, userdata, message:mqtt.MQTTMessage):
+    if message.topic == topic_status_3: 
+        on = int(message.payload[0])
+        red = int(message.payload[1])
+        green = int(message.payload[2])
+        blue = int(message.payload[3])
+        setColor_3(red,green,blue)
+        if on:
+            bulb_on_off_3.set("ON") 
+        else:
+            bulb_on_off_3.set("OFF") 
+        bulb_time_3.set(time.ctime())
+
+#MQTT information/connection
+client = mqtt.Client()
+client.username_pw_set("giiuser","giipassword")
+client.on_message = onMessageFromLight_1
+client.on_message = onMessageFromLight_2
+client.on_message = onMessageFromLight_3
+client.connect(broker)
+client.subscribe(topic_status_1,topic_status_2,topic_status_3)
+
+
 #---------------------------------------------------------------------------------------------
 #Create the window with a title
 root = tk.Tk() 
@@ -149,4 +204,5 @@ Blue_Entry_3 = tk.Entry(control_frame,width=20)
 Blue_Entry_3.grid(row=4,column=5)
 tk.Label(control_frame,text="Blue:").grid(row=4,column=4)
 #---------------------------------------------------------------------------------------------
+pumpMQTT() #messaging cycle
 root.mainloop() #starts the main event loop to display the GUI and handle user events
