@@ -23,7 +23,7 @@ We integrated a Raspberry Pi, Smart lightbulbs, a camera, the M5StickCPlus, a ro
 
 
 **Work Division:**<br>
-<ins>William</ins> - I formatted the README.md file to look professional as well as ensuring our ideas for the project were conveyed clearly and concisely. I also added as many pictures as I could to the README.md to show progress that was made on the project. I also contributed the code to set up a GUI for the project. The GUI has the capability to control and display information for three smart bulbs when connected properly. I created a GUI similar to the one used in class. Then I found another library that make the GUI have a more modern look and feel. I added the code for the modern GUI underneath the first GUI.
+<ins>William</ins> - I formatted the README.md file to look professional as well as ensured our ideas for the project were conveyed clearly and concisely in the README.md. I also added as many pictures as I could to the README.md to show progress that was made on the project. I also contributed the code to set up a GUI for the project. The GUI has the capability to control and display information for three smart bulbs when connected properly (Pictures of the GUI are below). I created a GUI similar to the one used in class, then I found another library that give the GUI have a more modern look and feel. I added the code for the modern GUI in the same file as the original GUI at the bottom. I changed the format of the final bulbcontrol.ino file to optimize the flow of the loop.
 <br>
 
 
