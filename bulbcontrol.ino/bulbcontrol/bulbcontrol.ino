@@ -104,70 +104,79 @@ void setup() {
 }
 
 
+
+void kitchenlight(){
+  if(colors[color] == "red" && rooms[room] == "kitchen"){
+  mqttClient.beginMessage(kitchen_red_light);
+  mqttClient.print(room);
+  mqttClient.endMessage();
+  }
+  if(colors[color] == "blue" && rooms[room] == "kitchen"){
+    mqttClient.beginMessage(kitchen_blue_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "green" && rooms[room] == "kitchen"){
+    mqttClient.beginMessage(kitchen_green_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "white" && rooms[room] == "kitchen"){
+    mqttClient.beginMessage(kitchen_white_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "off" && rooms[room] == "kitchen"){
+    mqttClient.beginMessage(kitchen_off_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "party time" && rooms[room] == "kitchen"){
+    mqttClient.beginMessage(kitchen_party_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+}
+
+
+void denlight(){
+  if(colors[color] == "red" && rooms[room] == "den"){
+    mqttClient.beginMessage(den_red_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "blue" && rooms[room] == "den"){
+    mqttClient.beginMessage(den_blue_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "green" && rooms[room] == "den"){
+    mqttClient.beginMessage(den_green_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "white" && rooms[room] == "den"){
+    mqttClient.beginMessage(den_white_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "off" && rooms[room] == "den"){
+    mqttClient.beginMessage(den_off_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+  if(colors[color] == "party time" && rooms[room] == "den"){
+    mqttClient.beginMessage(den_party_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
+  }
+}
+
 void loop(){
   mqttClient.poll();  
   if(digitalRead(BTNA)== LOW && !a_wait){
-    if(colors[color] == "red" && rooms[room] == "kitchen"){
-      mqttClient.beginMessage(kitchen_red_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "blue" && rooms[room] == "kitchen"){
-      mqttClient.beginMessage(kitchen_blue_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "green" && rooms[room] == "kitchen"){
-      mqttClient.beginMessage(kitchen_green_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "white" && rooms[room] == "kitchen"){
-      mqttClient.beginMessage(kitchen_white_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "off" && rooms[room] == "kitchen"){
-      mqttClient.beginMessage(kitchen_off_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "party time" && rooms[room] == "kitchen"){
-      mqttClient.beginMessage(kitchen_party_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "red" && rooms[room] == "den"){
-      mqttClient.beginMessage(den_red_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "blue" && rooms[room] == "den"){
-      mqttClient.beginMessage(den_blue_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "green" && rooms[room] == "den"){
-      mqttClient.beginMessage(den_green_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "white" && rooms[room] == "den"){
-      mqttClient.beginMessage(den_white_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "off" && rooms[room] == "den"){
-      mqttClient.beginMessage(den_off_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-    if(colors[color] == "party time" && rooms[room] == "den"){
-      mqttClient.beginMessage(den_party_light);
-      mqttClient.print(room);
-      mqttClient.endMessage();
-    }
-
+    kitchenlight();
+    denlight();
   }
   if(digitalRead(BTNB)==LOW && !b_wait){
     room++;
