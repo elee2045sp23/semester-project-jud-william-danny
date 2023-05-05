@@ -1,0 +1,15 @@
+alias: Den_Blue
+description: Turn on blue light in den
+trigger:
+  - platform: mqtt
+    topic: den/blue_light
+condition: []
+action:
+  - service: light.turn_on
+    entity_id: light.signify_netherlands_b_v_lcb002_light
+    data:
+      rgb_color:
+        - 0
+        - 0
+        - 255
+mode: single

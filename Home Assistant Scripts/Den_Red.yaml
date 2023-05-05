@@ -1,12 +1,12 @@
-alias: Kitchen_Red
-description: Turn on red light in kitchen
+alias: Den_Red
+description: Turn on red light in den
 trigger:
   - platform: mqtt
-    topic: kitchen/red_light
+    topic: den/red_light
 condition: []
 action:
   - service: light.turn_on
-    entity_id: light.signify_netherlands_b_v_lcb002_light_2
+    entity_id: light.signify_netherlands_b_v_lcb002_light
     data:
       rgb_color:
         - 255

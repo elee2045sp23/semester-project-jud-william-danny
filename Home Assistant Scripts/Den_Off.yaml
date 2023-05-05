@@ -1,0 +1,10 @@
+alias: Den_Off
+description: Turn off light in den
+trigger:
+  - platform: mqtt
+    topic: den/off_light
+condition: []
+action:
+  - service: light.turn_off
+    entity_id: light.signify_netherlands_b_v_lcb002_light
+mode: single
