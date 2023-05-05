@@ -38,11 +38,23 @@ We integrated a Raspberry Pi, Smart lightbulbs, a camera, the M5StickCPlus, a ro
 <ins>Cameron</ins> - [add stuff here]
 <br>
 <br>
-# Link to Video of Project:
-Final Product: [insertlinkhere]
+
+
+
+
+
+
+**Project Video Links:**
 <br>
+<ins>Final Product:</ins>
 <br>
-Progress Videos: https://photos.app.goo.gl/HLFDnbQw88Mr456x8
+https://photos.app.goo.gl/rhYP5dnM88SUH3ks9
+<br>
+<ins>Progress Videos:</ins>
+<br>
+https://photos.app.goo.gl/HLFDnbQw88Mr456x8
+<br>
+https://photos.app.goo.gl/PXVQ2H7wsX6WASSs5
 
 
 
@@ -51,7 +63,8 @@ Progress Videos: https://photos.app.goo.gl/HLFDnbQw88Mr456x8
 
 
 
-# Images of Our Project:
+**Images of Our Project:**
+<br>
 ![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/single_light_bulb.jpg)
 <br>
 <br>
@@ -68,4 +81,6 @@ Progress Videos: https://photos.app.goo.gl/HLFDnbQw88Mr456x8
 <br>
 <br>
 ![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/blue_light.jpg)
+<br>
+![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/raspberry_pi_setup.jpg)
 
