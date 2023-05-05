@@ -65,4 +65,7 @@ Progress Videos: https://photos.app.goo.gl/HLFDnbQw88Mr456x8
 <br>
 <br>
 ![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/Modern_GUI.png)
+<br>
+<br>
+![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/blue_light.jpg)
 
