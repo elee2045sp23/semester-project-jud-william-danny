@@ -31,7 +31,7 @@ We integrated a Raspberry Pi, Smart lightbulbs, a camera, the M5StickCPlus, a ro
 <br>
 
 
-<ins>Judd</ins> - [add stuff here]
+<ins>Judd</ins> - For our final project, I contributed to researching and working on the initial code to allow the rotary encoder that we used to work, rotating through the color and brightness options and pressing down the button to select a certain option. After manipulating a lot of code, and struggling with the rotation aspect, we decided to do away with the brightness and focus on changing the color. We were able to set up the M5StickCPlus screen as shown in the pictures and the final code allowed you to rotate between each room using the buttons on the side, rotate between the colors using the rotary encoder button, and then turn the light on and off with the set room and color with the M5 button. I then made a home assistant script for each color for each room for the based on the selection on the M5StickCPlus and they worked great!
 <br>
 
 
