@@ -35,7 +35,7 @@ We integrated a Raspberry Pi, Smart lightbulbs, a camera, the M5StickCPlus, a ro
 <br>
 
 
-<ins>Cameron</ins> - [add stuff here]
+<ins>Cameron</ins> - I mainly did research and code for the brightness and color switcher. As stated above lots of struggle went into trying to get two separate displays for the M5Stick one for brightness and one for color. This was so we could use the rotation of the encoder to change the colors and then switch it to brightness by pressing the encoder button, which led us to remove the brightness feature as was one of the least important parts of the project. Hence, why you see the brightness and color switcher and then the color switcher files. 
 <br>
 <br>
 
