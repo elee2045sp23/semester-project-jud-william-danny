@@ -107,9 +107,9 @@ void setup() {
 
 void kitchenlight(){
   if(colors[color] == "red" && rooms[room] == "kitchen"){
-  mqttClient.beginMessage(kitchen_red_light);
-  mqttClient.print(room);
-  mqttClient.endMessage();
+    mqttClient.beginMessage(kitchen_red_light);
+    mqttClient.print(room);
+    mqttClient.endMessage();
   }
   if(colors[color] == "blue" && rooms[room] == "kitchen"){
     mqttClient.beginMessage(kitchen_blue_light);
