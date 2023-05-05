@@ -1,0 +1,10 @@
+alias: Kitchen_Off
+description: Turn off light in kitchen
+trigger:
+  - platform: mqtt
+    topic: kitchen/off_light
+condition: []
+action:
+  - service: light.turn_off
+    entity_id: light.signify_netherlands_b_v_lcb002_light_2
+mode: single

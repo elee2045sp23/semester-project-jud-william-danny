@@ -1,0 +1,15 @@
+alias: Kitchen_Red
+description: Turn on red light in kitchen
+trigger:
+  - platform: mqtt
+    topic: kitchen/red_light
+condition: []
+action:
+  - service: light.turn_on
+    entity_id: light.signify_netherlands_b_v_lcb002_light_2
+    data:
+      rgb_color:
+        - 255
+        - 0
+        - 0
+mode: single
