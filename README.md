@@ -16,7 +16,7 @@ onboard a Raspberry Pi to detect motion and serve as a smart home hub and the M5
 
 
 **Accomplishments for this project include:**
-We integrated a Raspberry Pi, Smart lightbulbs, a camera, the M5StickCPlus, a rotary-encoder, and a graphical user interface via hardware connections and MQTT messaging. The lightbulbs are controlled by the M5/rotary-encoder to turn on/off and set the bulb color. The GUI does the same thing separate from the M5/rotary encoder. The camera tracks motion and can turn the bulb on in a "security mode". 
+We integrated a Raspberry Pi, Zigbee Antenna, Smart lightbulbs, the M5StickCPlus, a rotary-encoder, and a graphical user interface via hardware connections and MQTT messaging. The lightbulbs are controlled by the M5/rotary-encoder to turn on/off and set the bulb color. The GUI does the same thing separate from the M5/rotary encoder. 
 <br>
 <br>
 
@@ -27,7 +27,7 @@ We integrated a Raspberry Pi, Smart lightbulbs, a camera, the M5StickCPlus, a ro
 <br>
 
 
-<ins>Danny</ins> - [add stuff here]
+<ins>Danny</ins> - My primary responsibility for the project was handling the raspberry pi setup. I started by buying a raspi camera module and testing an example object identification OpenCV program. The camera feed would run but the program would return an error when it tried to draw boxes around objects and I could not determine the cause of this however I believe it is because the current version of OpenCV no longer supports the Pi Camera module v1. I then researched smart home communications and determined the Zigbee Communication Protocol to be the easiest to use as it is utilized by most "generic brand" smart bulbs. I used an open source home automation software called HomeAssistant and a Zigbee USB Antenna. HomeAssistant has an operating system that can be run directly on the raspberry pi, however; I wanted to be able to also run the camera program. I used Docker to install a container version of HomeAssistant on the Raspberry Pi OS. With the Raspi connected to Ethernet, HomeAssistant opens a socket which can be accessed from a laptop and pulls up a UI where devices, entities, and automations can be set up as extra .yaml scripts in HomeAssistant's configuration file. Despite not being able to run OpenCV, I still planned to add the RaspiCam module as a HomeAssistant entity and use an add on called Motion Eye to identify objects, but then learned that the raspi camera module integration is only avaible in the core version of the software, not the docker container or the OS version. This is why we ultimately did away with the camera, used the OS version of HomeAssistant, and had the Raspi run as a headless server. Since we had also done away with the dial functionality on the m5, I simplified the UI to use just the rotary encoder button and set up the MQTT messages. I then wrote test scripts for HomeAssistant to confirm I could turn the light on and off. 
 <br>
 
 
@@ -55,6 +55,8 @@ https://photos.app.goo.gl/rhYP5dnM88SUH3ks9
 https://photos.app.goo.gl/HLFDnbQw88Mr456x8
 <br>
 https://photos.app.goo.gl/PXVQ2H7wsX6WASSs5
+<br>
+https://photos.app.goo.gl/UpkU7wVVnCcQPb919
 
 
 
@@ -83,4 +85,21 @@ https://photos.app.goo.gl/PXVQ2H7wsX6WASSs5
 ![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/blue_light.jpg)
 <br>
 ![single_light_bulb](https://github.com/elee2045sp23/semester-project-jud-william-danny/blob/main/raspberry_pi_setup.jpg)
+
+**Resources**
+<br>
+https://www.amazon.com/SONOFF-Gateway-Universal-Assistant-Wireless/dp/B09KXTCMSC/ref=asc_df_B09KXTCMSC/?tag=hyprod-20&linkCode=df0&hvadid=563598683736&hvpos=&hvnetw=g&hvrand=13744564945419614248&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011068&hvtargid=pla-1571136511371&psc=1
+<br>
+https://www.amazon.com/Arducam-Megapixels-Sensor-OV5647-Raspberry/dp/B012V1HEP4/ref=asc_df_B012V1HEP4/?tag=&linkCode=df0&hvadid=385286500280&hvpos=&hvnetw=g&hvrand=12021522022216430507&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011068&hvtargid=pla-820020083673&ref=&adgrpid=77282054583&th=1
+<br>
+https://www.amazon.com/Sengled-Multicolor-2000-6500K-Equivalent-SmartThings/dp/B073ZBYXKQ/ref=asc_df_B073ZBYXKQ/?tag=hyprod-20&linkCode=df0&hvadid=241989147482&hvpos=&hvnetw=g&hvrand=4672630734999774124&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011068&hvtargid=pla-515852267037&psc=1
+<br>
+https://www.amazon.com/Philips-Hue-Bluetooth-compatible-Assistant/dp/B07QV9XB87/ref=asc_df_B07R2MQ2PY/?tag=&linkCode=df0&hvadid=344024276099&hvpos=&hvnetw=g&hvrand=1540466057292455920&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011068&hvtargid=pla-785998933195&ref=&adgrpid=69357499815&th=1
+<br>
+https://www.home-assistant.io/installation/raspberrypi/
+<br>
+https://www.home-assistant.io/integrations/script/
+<br>
+https://www.amazon.com/Maxmoral-Encoder-Degrees-Compatible-Development/dp/B07M631J1Q/ref=asc_df_B07M631J1Q/?tag=hyprod-20&linkCode=df0&hvadid=309795598953&hvpos=&hvnetw=g&hvrand=11336123125338606885&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011068&hvtargid=pla-634614360951&psc=1&tag=&ref=&adgrpid=61053849109&hvpone=&hvptwo=&hvadid=309795598953&hvpos=&hvnetw=g&hvrand=11336123125338606885&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011068&hvtargid=pla-634614360951
+<br>
 
